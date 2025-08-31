@@ -196,7 +196,7 @@ export default function TermsOfServicePage() {
                   <div className="p-4 bg-destructive/10 rounded-xl border border-destructive/30">
                     <h4 className="font-bold text-destructive mb-2">🚫 100% CPU USAGE 24/7 IS STRICTLY PROHIBITED</h4>
                     <ul className="text-sm text-destructive/90 space-y-1">
-                      <li>• Sustained high CPU usage (>80% for extended periods)</li>
+                      <li>• Sustained high CPU usage (&gt;80% for extended periods)</li>
                       <li>• Memory exhaustion or swapping</li>
                       <li>• Disk I/O abuse or storage abuse</li>
                       <li>• Network bandwidth abuse</li>
