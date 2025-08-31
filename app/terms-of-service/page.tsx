@@ -321,12 +321,12 @@ export default function TermsOfServicePage() {
               <div className="glass-effect rounded-2xl p-6 border border-border/50">
                 <div className="grid md:grid-cols-3 gap-4">
                   <div className="text-center p-4 bg-primary/10 rounded-xl">
-                    <div className="text-2xl font-bold text-primary mb-2">90%</div>
-                    <p className="text-sm text-muted-foreground">Target Uptime</p>
+                    <div className="text-2xl font-bold text-primary mb-2">Best Efforts</div>
+                    <p className="text-sm text-muted-foreground">Uptime Target</p>
                   </div>
                   <div className="text-center p-4 bg-accent/10 rounded-xl">
                                          <div className="text-2xl font-bold text-foreground mb-2">No</div>
-                    <p className="text-sm text-muted-foreground">Formal Guarantee</p>
+                    <p className="text-muted-foreground">Formal Guarantee</p>
                   </div>
                   <div className="text-center p-4 bg-primary/10 rounded-xl">
                     <div className="text-2xl font-bold text-primary mb-2">Limited</div>
@@ -335,7 +335,7 @@ export default function TermsOfServicePage() {
                 </div>
                 <div className="mt-4 p-4 bg-accent/10 rounded-xl">
                                      <p className="text-sm text-primary">
-                     <strong>Note:</strong> This target is not a formal guarantee, and no contractual warranty is provided regarding uptime or service availability. The SLA is provided solely as an operational benchmark.
+                     <strong>Note:</strong> We make best efforts to maintain service availability but provide no promises, guarantees, or warranties regarding uptime or service availability. The SLA is provided solely as an operational benchmark with no contractual obligations.
                    </p>
                 </div>
               </div>
@@ -444,15 +444,20 @@ export default function TermsOfServicePage() {
               </p>
             </div>
 
-            {/* Footer */}
-            <div className="text-center pt-8 border-t border-border/50">
-              <p className="text-muted-foreground">
-                <strong>Last Updated:</strong> August 19, 2025 | <strong>Version:</strong> 1.0
-              </p>
-              <p className="text-sm text-muted-foreground mt-2">
-                For questions about these Terms of Service, contact us at legal@eclipsesystems.top
-              </p>
-            </div>
+                         {/* Footer */}
+             <div className="text-center pt-8 border-t border-border/50">
+               <p className="text-muted-foreground">
+                 <strong>Last Updated:</strong> August 19, 2025 | <strong>Version:</strong> 1.0
+               </p>
+               <p className="text-sm text-muted-foreground mt-2">
+                 For questions about these Terms of Service, contact us at legal@eclipsesystems.top
+               </p>
+               <div className="mt-4 p-4 bg-accent/10 rounded-xl border border-accent/30">
+                 <p className="text-sm text-muted-foreground">
+                   <strong>Raw Text Version:</strong> <a href="/terms-of-service/raw.txt" className="text-primary hover:underline">Download as plain text</a>
+                 </p>
+               </div>
+             </div>
           </CardContent>
         </Card>
       </div>

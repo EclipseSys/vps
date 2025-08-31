@@ -133,11 +133,11 @@ Anti-Abuse Monitoring: We actively monitor all VPS instances for resource usage 
 
 10. SERVICE LEVEL AGREEMENT (SLA)
 ==================================
-Target Uptime: 90%
+Uptime Target: Best Efforts
 Formal Guarantee: No
 Third-Party Control: Limited
 
-Note: This target is not a formal guarantee, and no contractual warranty is provided regarding uptime or service availability. The SLA is provided solely as an operational benchmark.
+Note: We make best efforts to maintain service availability but provide no promises, guarantees, or warranties regarding uptime or service availability. The SLA is provided solely as an operational benchmark with no contractual obligations.
 
 11. LIMITATION OF LIABILITY
 ============================

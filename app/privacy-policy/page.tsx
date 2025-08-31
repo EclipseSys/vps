@@ -339,15 +339,20 @@ export default function PrivacyPolicyPage() {
               </div>
             </section>
 
-            {/* Footer */}
-            <div className="text-center pt-8 border-t border-border/50">
-              <p className="text-muted-foreground">
-                <strong>Last Updated:</strong> August 19, 2025 | <strong>Version:</strong> 1.0
-              </p>
-              <p className="text-sm text-muted-foreground mt-2">
-                For questions about this Privacy Policy, contact us at legal@eclipsesystems.top
-              </p>
-            </div>
+                         {/* Footer */}
+             <div className="text-center pt-8 border-t border-border/50">
+               <p className="text-muted-foreground">
+                 <strong>Last Updated:</strong> August 19, 2025 | <strong>Version:</strong> 1.0
+               </p>
+               <p className="text-sm text-muted-foreground mt-2">
+                 For questions about this Privacy Policy, contact us at legal@eclipsesystems.top
+               </p>
+               <div className="mt-4 p-4 bg-accent/10 rounded-xl border border-accent/30">
+                 <p className="text-sm text-muted-foreground">
+                   <strong>Raw Text Version:</strong> <a href="/privacy-policy/raw.txt" className="text-primary hover:underline">Download as plain text</a>
+                 </p>
+               </div>
+             </div>
           </CardContent>
         </Card>
       </div>
