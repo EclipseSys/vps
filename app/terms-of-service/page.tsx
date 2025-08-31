@@ -21,7 +21,7 @@ export default function TermsOfServicePage() {
           
           {/* Quick Summary */}
           <div className="glass-effect rounded-2xl p-6 border border-accent/30 bg-accent/5 max-w-4xl mx-auto">
-            <h2 className="text-lg font-semibold text-accent mb-4">Quick Summary</h2>
+                         <h2 className="text-lg font-semibold text-foreground mb-4">Quick Summary</h2>
             <div className="grid md:grid-cols-2 gap-4 text-sm text-muted-foreground">
               <div>
                 <p><strong>Operator:</strong> Volunteer-run, non-commercial hobby project; not a registered company</p>
@@ -63,9 +63,9 @@ export default function TermsOfServicePage() {
                   By using our VPS hosting services, dashboard, or websites (collectively, the "Services"), you ("User" or "Customer") agree to comply with and be bound by these Terms of Service and the accompanying policies. These Terms constitute a legally binding agreement between you and the Eclipse Systems VPS Initiative operators (the "Operator", "We", "Our"). If you do not agree to these Terms, do not use the Services.
                 </p>
                 <div className="p-4 bg-accent/10 rounded-xl border border-accent/30">
-                  <p className="text-sm text-accent">
-                    <strong>Important for US residents:</strong> Section 24 contains an arbitration agreement and a class action/jury trial waiver that affects your rights. Please read it carefully.
-                  </p>
+                                     <p className="text-sm text-primary">
+                     <strong>Important for US residents:</strong> Section 24 contains an arbitration agreement and a class action/jury trial waiver that affects your rights. Please read it carefully.
+                   </p>
                 </div>
               </div>
             </section>
@@ -114,13 +114,13 @@ export default function TermsOfServicePage() {
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
                     <h3 className="font-semibold text-foreground mb-3">Eligibility</h3>
-                    <ul className="space-y-2 text-sm text-muted-foreground">
-                      <li>• Must be 18 years or older</li>
-                      <li>• Must be a student, developer, or hobbyist</li>
-                      <li>• Must have a legitimate educational use case</li>
-                      <li>• Must NOT be a business or commercial entity</li>
-                      <li>• Must comply with all applicable laws and regulations</li>
-                    </ul>
+                                         <ul className="space-y-2 text-sm text-muted-foreground">
+                       <li>• Must be 14 years or older (with parental permission for minors)</li>
+                       <li>• Must be a student, developer, or hobbyist</li>
+                       <li>• Must have a legitimate educational use case</li>
+                       <li>• Must NOT be a business or commercial entity</li>
+                       <li>• Must comply with all applicable laws and regulations</li>
+                     </ul>
                   </div>
                   <div>
                     <h3 className="font-semibold text-foreground mb-3">Account Security</h3>
@@ -244,9 +244,9 @@ export default function TermsOfServicePage() {
                   <li>• Any activities conducted on or via the server</li>
                 </ul>
                 <div className="p-4 bg-accent/10 rounded-xl">
-                  <p className="text-sm text-accent">
-                    <strong>Important:</strong> By using the Services, you acknowledge and accept full responsibility for ensuring that all activities comply with applicable laws, regulations, and these Terms. Eclipse Systems is not liable for any damages, legal liabilities, or penalties arising from activities carried out on your server or Account.
-                  </p>
+                                     <p className="text-sm text-primary">
+                     <strong>Important:</strong> By using the Services, you acknowledge and accept full responsibility for ensuring that all activities comply with applicable laws, regulations, and these Terms. Eclipse Systems is not liable for any damages, legal liabilities, or penalties arising from activities carried out on your server or Account.
+                   </p>
                 </div>
               </div>
             </section>
@@ -325,7 +325,7 @@ export default function TermsOfServicePage() {
                     <p className="text-sm text-muted-foreground">Target Uptime</p>
                   </div>
                   <div className="text-center p-4 bg-accent/10 rounded-xl">
-                    <div className="text-2xl font-bold text-accent mb-2">No</div>
+                                         <div className="text-2xl font-bold text-foreground mb-2">No</div>
                     <p className="text-sm text-muted-foreground">Formal Guarantee</p>
                   </div>
                   <div className="text-center p-4 bg-primary/10 rounded-xl">
@@ -334,25 +334,25 @@ export default function TermsOfServicePage() {
                   </div>
                 </div>
                 <div className="mt-4 p-4 bg-accent/10 rounded-xl">
-                  <p className="text-sm text-accent">
-                    <strong>Note:</strong> This target is not a formal guarantee, and no contractual warranty is provided regarding uptime or service availability. The SLA is provided solely as an operational benchmark.
-                  </p>
+                                     <p className="text-sm text-primary">
+                     <strong>Note:</strong> This target is not a formal guarantee, and no contractual warranty is provided regarding uptime or service availability. The SLA is provided solely as an operational benchmark.
+                   </p>
                 </div>
               </div>
             </section>
 
-            {/* 11. Limitation of Liability */}
-            <section>
-              <h2 className="text-2xl font-bold text-foreground mb-4">11. Limitation of Liability</h2>
-              <div className="glass-effect rounded-2xl p-6 border border-border/50">
-                <div className="text-center p-6 bg-accent/10 rounded-xl">
-                  <h3 className="text-2xl font-bold text-accent mb-2">TOTAL LIABILITY LIMITED TO €100 (EURO)</h3>
-                  <p className="text-muted-foreground">
-                    No liability for indirect damages, data loss, service interruptions, or third-party actions. Our Services are provided on an "as is" basis without any guarantees or warranties.
-                  </p>
-                </div>
-              </div>
-            </section>
+                         {/* 11. Limitation of Liability */}
+             <section>
+               <h2 className="text-2xl font-bold text-foreground mb-4">11. Limitation of Liability</h2>
+               <div className="glass-effect rounded-2xl p-6 border border-border/50">
+                 <div className="text-center p-6 bg-destructive/10 rounded-xl border border-destructive/30">
+                   <h3 className="text-2xl font-bold text-destructive mb-2">FULLY NON-LIABLE UNLESS REQUIRED BY LAW</h3>
+                   <p className="text-muted-foreground">
+                     We are completely non-liable for any damages, losses, data loss, service interruptions, third-party actions, or any other issues. Our Services are provided on an "as is" basis without any guarantees, warranties, or liability whatsoever. This limitation applies to the maximum extent permitted by applicable law.
+                   </p>
+                 </div>
+               </div>
+             </section>
 
             {/* 12. Governing Law and Jurisdiction */}
             <section>
@@ -361,7 +361,7 @@ export default function TermsOfServicePage() {
                 <h3 className="font-semibold text-foreground mb-3">Primary Jurisdiction</h3>
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="p-4 bg-accent/10 rounded-xl">
-                    <h4 className="font-bold text-accent mb-2">Primary: German Courts (BDSG)</h4>
+                                         <h4 className="font-bold text-foreground mb-2">Primary: German Courts (BDSG)</h4>
                     <p className="text-sm text-muted-foreground">
                       <strong>Governing Law:</strong> German law (Bundesdatenschutzgesetz)<br/>
                       <strong>Dispute Resolution:</strong> German procedures
@@ -391,7 +391,7 @@ export default function TermsOfServicePage() {
                     </p>
                   </div>
                   <div className="p-4 bg-accent/10 rounded-xl">
-                    <h4 className="font-bold text-accent mb-2">NO CLASS ACTIONS</h4>
+                                         <h4 className="font-bold text-foreground mb-2">NO CLASS ACTIONS</h4>
                     <p className="text-sm text-muted-foreground">
                       • No class actions or representative actions<br/>
                       • No consolidation of claims<br/>
@@ -421,9 +421,9 @@ export default function TermsOfServicePage() {
                   </div>
                 </div>
                 <div className="mt-4 p-4 bg-accent/10 rounded-xl">
-                  <p className="text-sm text-accent">
-                    <strong>Important Notice:</strong> Eclipse Systems VPS Initiative is a volunteer-run, non-commercial hobby project. It is not a registered company or legal entity and does not have employees.
-                  </p>
+                                     <p className="text-sm text-primary">
+                     <strong>Important Notice:</strong> Eclipse Systems VPS Initiative is a volunteer-run, non-commercial hobby project. It is not a registered company or legal entity and does not have employees.
+                   </p>
                 </div>
               </div>
             </section>

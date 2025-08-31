@@ -21,7 +21,7 @@ export default function PrivacyPolicyPage() {
           
           {/* Quick Summary */}
           <div className="glass-effect rounded-2xl p-6 border border-accent/30 bg-accent/5 max-w-4xl mx-auto">
-            <h2 className="text-lg font-semibold text-accent mb-4">Quick Summary</h2>
+                         <h2 className="text-lg font-semibold text-foreground mb-4">Quick Summary</h2>
             <div className="grid md:grid-cols-2 gap-4 text-sm text-muted-foreground">
               <div>
                 <p><strong>Controller:</strong> Eclipse Systems VPS Initiative</p>
@@ -73,9 +73,9 @@ export default function PrivacyPolicyPage() {
                   Eclipse Systems VPS Initiative ("we," "our," or "us") operates the VPS Initiative service. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our service.
                 </p>
                 <div className="p-4 bg-accent/10 rounded-xl border border-accent/30">
-                  <p className="text-sm text-accent">
-                    <strong>Hobby Project:</strong> This is a non-commercial, hobby-run student project. We are not a business, corporation, or commercial entity. This service is provided purely for educational and community purposes with no profit motive. We are located in Germany, Berlin.
-                  </p>
+                                     <p className="text-sm text-primary">
+                     <strong>Hobby Project:</strong> This is a non-commercial, hobby-run student project. We are not a business, corporation, or commercial entity. This service is provided purely for educational and community purposes with no profit motive. We are located in Germany, Berlin.
+                   </p>
                 </div>
               </div>
             </section>
@@ -113,9 +113,9 @@ export default function PrivacyPolicyPage() {
                   <p><strong>Data Protection Officer:</strong> legal@eclipsesystems.top</p>
                 </div>
                 <div className="mt-4 p-4 bg-accent/10 rounded-xl">
-                  <p className="text-sm text-accent">
-                    <strong>Note:</strong> Eclipse Systems VPS Initiative is a volunteer-run, non-commercial hobby project. It is not a registered company or legal entity and does not have employees.
-                  </p>
+                                     <p className="text-sm text-primary">
+                     <strong>Note:</strong> Eclipse Systems VPS Initiative is a volunteer-run, non-commercial hobby project. It is not a registered company or legal entity and does not have employees.
+                   </p>
                 </div>
               </div>
             </section>
@@ -306,9 +306,9 @@ export default function PrivacyPolicyPage() {
                   <li>• UK Data Protection Act 2018</li>
                 </ul>
                 <div className="p-4 bg-accent/10 rounded-xl">
-                  <p className="text-sm text-accent">
-                    <strong>Primary jurisdiction: German courts and law (BDSG)</strong>
-                  </p>
+                                     <p className="text-sm text-primary">
+                     <strong>Primary jurisdiction: German courts and law (BDSG)</strong>
+                   </p>
                 </div>
               </div>
             </section>
@@ -332,9 +332,9 @@ export default function PrivacyPolicyPage() {
                   </div>
                 </div>
                 <div className="mt-4 p-4 bg-accent/10 rounded-xl">
-                  <p className="text-sm text-accent">
-                    <strong>Important Notice:</strong> Eclipse Systems VPS Initiative is a volunteer-run, non-commercial hobby project. It is not a registered company or legal entity and does not have employees.
-                  </p>
+                                     <p className="text-sm text-primary">
+                     <strong>Important Notice:</strong> Eclipse Systems VPS Initiative is a volunteer-run, non-commercial hobby project. It is not a registered company or legal entity and does not have employees.
+                   </p>
                 </div>
               </div>
             </section>
