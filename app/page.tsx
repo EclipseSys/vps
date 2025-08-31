@@ -1470,22 +1470,22 @@ export default function VPSInitiativePage() {
               <h4 className="text-lg font-semibold text-foreground">{t.community}</h4>
               <ul className="space-y-3 text-muted-foreground">
                 <li>
-                  <a href="#" className="hover:text-primary transition-colors">
+                  <a href="https://discord.gg/SDM8jkGVYx" className="hover:text-primary transition-colors">
                     {t.discordServer}
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-primary transition-colors">
+                  <a href="https://github.com/EclipseSys/" className="hover:text-primary transition-colors">
                     {t.github}
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-primary transition-colors">
+                  <a href="https://status.eclipsesystems.top/" className="hover:text-primary transition-colors">
                     {t.statusPage}
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-primary transition-colors">
+                  <a href="mailto:support@eclipsesystems.top" className="hover:text-primary transition-colors">
                     {t.support}
                   </a>
                 </li>
