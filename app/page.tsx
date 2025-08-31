@@ -154,6 +154,9 @@ export default function VPSInitiativePage() {
       launchProject: "Launch Project",
       vpsInitiative: "VPS Initiative",
       freeVPSNoReally: "Free VPS (No, Really!)",
+      // Legal documents
+      privacyPolicy: "Privacy Policy",
+      termsOfService: "Terms of Service",
       // Alert messages
       pleaseAgreeToTerms: "Please agree to the Privacy Policy and Terms of Service to continue.",
       applicationSubmitted: "Application submitted successfully! We'll review it within 24-48 hours.",
@@ -264,6 +267,9 @@ export default function VPSInitiativePage() {
       launchProject: "Projekt starten",
       vpsInitiative: "VPS-Initiative",
       freeVPSNoReally: "Kostenloser VPS (Nein, wirklich!)",
+      // Legal documents
+      privacyPolicy: "Datenschutzrichtlinie",
+      termsOfService: "Nutzungsbedingungen",
       // Alert messages
       pleaseAgreeToTerms: "Bitte stimme der Datenschutzrichtlinie und den Nutzungsbedingungen zu, um fortzufahren.",
       applicationSubmitted: "Bewerbung erfolgreich eingereicht! Wir werden sie innerhalb von 24-48 Stunden überprüfen.",
@@ -374,6 +380,9 @@ export default function VPSInitiativePage() {
       launchProject: "Запустить проект",
       vpsInitiative: "VPS Инициатива",
       freeVPSNoReally: "Бесплатный VPS (Нет, правда!)",
+      // Legal documents
+      privacyPolicy: "Политика конфиденциальности",
+      termsOfService: "Условия обслуживания",
       // Alert messages
       pleaseAgreeToTerms: "Пожалуйста, согласитесь с Политикой конфиденциальности и Условиями обслуживания, чтобы продолжить.",
       applicationSubmitted: "Заявка успешно отправлена! Мы рассмотрим её в течение 24-48 часов.",
@@ -484,6 +493,9 @@ export default function VPSInitiativePage() {
       launchProject: "プロジェクトを起動",
       vpsInitiative: "VPSイニシアチブ",
       freeVPSNoReally: "無料VPS（いいえ、本当に！）",
+      // Legal documents
+      privacyPolicy: "プライバシーポリシー",
+      termsOfService: "利用規約",
       // Alert messages
       pleaseAgreeToTerms: "続行するには、プライバシーポリシーと利用規約に同意してください。",
       applicationSubmitted: "アプリケーションが正常に送信されました！24-48時間以内にレビューします。",
@@ -594,6 +606,12 @@ export default function VPSInitiativePage() {
       launchProject: "启动项目",
       vpsInitiative: "VPS倡议",
       freeVPSNoReally: "免费VPS（不，真的！）",
+      // Legal documents
+      privacyPolicy: "隐私政策",
+      termsOfService: "服务条款",
+      // Hobby project notice
+      hobbyProjectNotice: "业余项目通知",
+      hobbyProjectDescription: "这是一个非商业、业余运营的学生项目。我们不是企业，也不提供商业托管服务。此服务专为教育目的、个人项目和学习体验而设计。",
       // Alert messages
       pleaseAgreeToTerms: "请同意隐私政策和服务条款以继续。",
       applicationSubmitted: "申请提交成功！我们将在24-48小时内审核。",
@@ -1348,6 +1366,20 @@ export default function VPSInitiativePage() {
                     <p className="text-sm text-muted-foreground">
                       {t.agreeToDataHandling}
                     </p>
+                    <div className="flex space-x-4 text-sm">
+                      <a 
+                        href="/privacy-policy" 
+                        className="text-primary hover:underline"
+                      >
+                        {t.privacyPolicy}
+                      </a>
+                      <a 
+                        href="/terms-of-service" 
+                        className="text-primary hover:underline"
+                      >
+                        {t.termsOfService}
+                      </a>
+                    </div>
                   </div>
                 </div>
 
@@ -1419,6 +1451,16 @@ export default function VPSInitiativePage() {
                 <li>
                   <a href="#" className="hover:text-primary transition-colors">
                     {t.wireguardTutorial}
+                  </a>
+                </li>
+                <li>
+                  <a href="/privacy-policy" className="hover:text-primary transition-colors">
+                    {t.privacyPolicy}
+                  </a>
+                </li>
+                <li>
+                  <a href="/terms-of-service" className="hover:text-primary transition-colors">
+                    {t.termsOfService}
                   </a>
                 </li>
               </ul>
