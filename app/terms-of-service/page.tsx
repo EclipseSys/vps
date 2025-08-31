@@ -454,7 +454,7 @@ export default function TermsOfServicePage() {
                </p>
                <div className="mt-4 p-4 bg-accent/10 rounded-xl border border-accent/30">
                  <p className="text-sm text-muted-foreground">
-                   <strong>Raw Text Version:</strong> <a href="/terms-of-service/raw.txt" className="text-primary hover:underline">Download as plain text</a>
+                   <strong>Raw Text Version:</strong> <a href="/terms-of-service.txt" className="text-primary hover:underline">Download as plain text</a>
                  </p>
                </div>
              </div>

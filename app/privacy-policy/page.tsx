@@ -349,7 +349,7 @@ export default function PrivacyPolicyPage() {
                </p>
                <div className="mt-4 p-4 bg-accent/10 rounded-xl border border-accent/30">
                  <p className="text-sm text-muted-foreground">
-                   <strong>Raw Text Version:</strong> <a href="/privacy-policy/raw.txt" className="text-primary hover:underline">Download as plain text</a>
+                   <strong>Raw Text Version:</strong> <a href="/privacy-policy.txt" className="text-primary hover:underline">Download as plain text</a>
                  </p>
                </div>
              </div>
