@@ -1455,7 +1455,7 @@ export default function VPSInitiativePage() {
             <div className="flex flex-col items-center space-y-4 mb-8">
               <div className="flex items-center space-x-4">
                 <a
-                  href="https://github.com/eclipse-systems/vps-initiative"
+                  href="https://github.com/eclipsesys/vps"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center space-x-2 text-muted-foreground hover:text-primary transition-colors"
