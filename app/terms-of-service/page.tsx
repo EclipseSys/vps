@@ -21,17 +21,18 @@ export default function TermsOfServicePage() {
           
           {/* Quick Summary */}
           <div className="glass-effect rounded-2xl p-6 border border-accent/30 bg-accent/5 max-w-4xl mx-auto">
-            <h2 className="text-lg font-semibold text-accent mb-4">📋 Quick Summary</h2>
+            <h2 className="text-lg font-semibold text-accent mb-4">Quick Summary</h2>
             <div className="grid md:grid-cols-2 gap-4 text-sm text-muted-foreground">
               <div>
-                <p><strong>🏠 Operator:</strong> Volunteer-run, non-commercial hobby project; not a registered company</p>
-                <p><strong>🌍 Services:</strong> Free VPS hosting for educational and development purposes</p>
-                <p><strong>📧 Contact:</strong> legal@eclipsesystems.top</p>
+                <p><strong>Operator:</strong> Volunteer-run, non-commercial hobby project; not a registered company</p>
+                <p><strong>Services:</strong> Free VPS hosting for educational and development purposes</p>
+                <p><strong>Contact:</strong> legal@eclipsesystems.top</p>
+                <p><strong>Address:</strong> Germany, Berlin</p>
               </div>
               <div>
-                <p><strong>🔒 Privacy:</strong> GDPR compliant with limited data collection</p>
-                <p><strong>⚖️ Law:</strong> German law (BDSG) with EU consumer protections</p>
-                <p><strong>🚫 Prohibited:</strong> Commercial use, crypto mining, Tor nodes, 100% CPU abuse</p>
+                <p><strong>Privacy:</strong> GDPR compliant with limited data collection</p>
+                <p><strong>Law:</strong> German law (BDSG) with EU consumer protections</p>
+                <p><strong>Prohibited:</strong> Commercial use, crypto mining, Tor nodes, 100% CPU abuse</p>
               </div>
             </div>
           </div>
@@ -140,13 +141,13 @@ export default function TermsOfServicePage() {
               <div className="glass-effect rounded-2xl p-6 border border-border/50">
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="p-4 bg-green-500/10 rounded-xl border border-green-500/30">
-                    <h4 className="font-bold text-green-600 mb-2">✅ Resource Usage</h4>
+                    <h4 className="font-bold text-green-600 mb-2">Resource Usage</h4>
                     <p className="text-sm text-muted-foreground">
                       Users must utilize allocated server resources fairly. No User should continuously run their allocated resources at 100% capacity for more than 2 hours at a time.
                     </p>
                   </div>
                   <div className="p-4 bg-red-500/10 rounded-xl border border-red-500/30">
-                    <h4 className="font-bold text-red-600 mb-2">⚠️ Consequences</h4>
+                    <h4 className="font-bold text-red-600 mb-2">Consequences</h4>
                     <p className="text-sm text-muted-foreground">
                       Excessive or abusive usage in violation of this policy may result in performance throttling, temporary suspension, or termination of service to ensure a stable environment for all users.
                     </p>
@@ -172,7 +173,7 @@ export default function TermsOfServicePage() {
                 <div className="space-y-6">
                   {/* Tor Nodes */}
                   <div className="p-4 bg-destructive/10 rounded-xl border border-destructive/30">
-                    <h4 className="font-bold text-destructive mb-2">🚫 TOR EXIT NODES ARE STRICTLY PROHIBITED</h4>
+                    <h4 className="font-bold text-destructive mb-2">TOR EXIT NODES ARE STRICTLY PROHIBITED</h4>
                     <ul className="text-sm text-destructive/90 space-y-1">
                       <li>• Tor relay nodes (entry, middle, or exit)</li>
                       <li>• VPN services for anonymous browsing</li>
@@ -183,7 +184,7 @@ export default function TermsOfServicePage() {
 
                   {/* Crypto Mining */}
                   <div className="p-4 bg-destructive/10 rounded-xl border border-destructive/30">
-                    <h4 className="font-bold text-destructive mb-2">🚫 ALL CRYPTOCURRENCY MINING IS PROHIBITED</h4>
+                    <h4 className="font-bold text-destructive mb-2">ALL CRYPTOCURRENCY MINING IS PROHIBITED</h4>
                     <ul className="text-sm text-destructive/90 space-y-1">
                       <li>• Bitcoin, Ethereum, Monero, or any other cryptocurrency mining</li>
                       <li>• Mining pools or mining software</li>
@@ -194,7 +195,7 @@ export default function TermsOfServicePage() {
 
                   {/* Resource Abuse */}
                   <div className="p-4 bg-destructive/10 rounded-xl border border-destructive/30">
-                    <h4 className="font-bold text-destructive mb-2">🚫 100% CPU USAGE 24/7 IS STRICTLY PROHIBITED</h4>
+                    <h4 className="font-bold text-destructive mb-2">100% CPU USAGE 24/7 IS STRICTLY PROHIBITED</h4>
                     <ul className="text-sm text-destructive/90 space-y-1">
                       <li>• Sustained high CPU usage (&gt;80% for extended periods)</li>
                       <li>• Memory exhaustion or swapping</li>
@@ -205,7 +206,7 @@ export default function TermsOfServicePage() {
 
                   {/* Commercial Abuse */}
                   <div className="p-4 bg-destructive/10 rounded-xl border border-destructive/30">
-                    <h4 className="font-bold text-destructive mb-2">🚫 COMMERCIAL USE STRICTLY PROHIBITED</h4>
+                    <h4 className="font-bold text-destructive mb-2">COMMERCIAL USE STRICTLY PROHIBITED</h4>
                     <ul className="text-sm text-destructive/90 space-y-1">
                       <li>• Business hosting or commercial applications</li>
                       <li>• Reselling or redistributing our services</li>
@@ -217,7 +218,7 @@ export default function TermsOfServicePage() {
 
                   {/* Other Prohibited */}
                   <div className="p-4 bg-destructive/10 rounded-xl border border-destructive/30">
-                    <h4 className="font-bold text-destructive mb-2">🚫 Additional Strictly Prohibited Activities</h4>
+                    <h4 className="font-bold text-destructive mb-2">Additional Strictly Prohibited Activities</h4>
                     <ul className="text-sm text-destructive/90 space-y-1">
                       <li>• Malware distribution or hosting</li>
                       <li>• Botnet command and control servers</li>
@@ -360,14 +361,14 @@ export default function TermsOfServicePage() {
                 <h3 className="font-semibold text-foreground mb-3">Primary Jurisdiction</h3>
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="p-4 bg-accent/10 rounded-xl">
-                    <h4 className="font-bold text-accent mb-2">🇩🇪 Primary: German Courts (BDSG)</h4>
+                    <h4 className="font-bold text-accent mb-2">Primary: German Courts (BDSG)</h4>
                     <p className="text-sm text-muted-foreground">
                       <strong>Governing Law:</strong> German law (Bundesdatenschutzgesetz)<br/>
                       <strong>Dispute Resolution:</strong> German procedures
                     </p>
                   </div>
                   <div className="p-4 bg-primary/10 rounded-xl">
-                    <h4 className="font-bold text-primary mb-2">🌍 Other Jurisdictions</h4>
+                    <h4 className="font-bold text-primary mb-2">Other Jurisdictions</h4>
                     <p className="text-sm text-muted-foreground">
                       • EU: Subject to EU consumer protection laws<br/>
                       • UK: Subject to UK consumer protection laws<br/>

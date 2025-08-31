@@ -21,17 +21,19 @@ export default function PrivacyPolicyPage() {
           
           {/* Quick Summary */}
           <div className="glass-effect rounded-2xl p-6 border border-accent/30 bg-accent/5 max-w-4xl mx-auto">
-            <h2 className="text-lg font-semibold text-accent mb-4">📋 Quick Summary</h2>
+            <h2 className="text-lg font-semibold text-accent mb-4">Quick Summary</h2>
             <div className="grid md:grid-cols-2 gap-4 text-sm text-muted-foreground">
               <div>
-                <p><strong>🏠 Operator:</strong> Volunteer-run, non-commercial hobby project; not a registered company</p>
-                <p><strong>🌍 Services:</strong> Free VPS hosting for educational and development purposes</p>
-                <p><strong>📧 Contact:</strong> legal@eclipsesystems.top</p>
+                <p><strong>Controller:</strong> Eclipse Systems VPS Initiative</p>
+                <p><strong>Contact:</strong> legal@eclipsesystems.top</p>
+                <p><strong>Address:</strong> Germany, Berlin</p>
+                <p><strong>Status:</strong> Volunteer-run, non-commercial hobby project</p>
               </div>
               <div>
-                <p><strong>🔒 Privacy:</strong> GDPR compliant with limited data collection</p>
-                <p><strong>⚖️ Law:</strong> German law (BDSG) with EU consumer protections</p>
-                <p><strong>🚫 Prohibited:</strong> Commercial use, crypto mining, Tor nodes, 100% CPU abuse</p>
+                <p><strong>Data:</strong> Limited collection for service provision</p>
+                <p><strong>Rights:</strong> Full GDPR rights including access and deletion</p>
+                <p><strong>Law:</strong> German law (BDSG) with EU protections</p>
+                <p><strong>Retention:</strong> Data deleted when no longer needed</p>
               </div>
             </div>
           </div>
@@ -72,7 +74,7 @@ export default function PrivacyPolicyPage() {
                 </p>
                 <div className="p-4 bg-accent/10 rounded-xl border border-accent/30">
                   <p className="text-sm text-accent">
-                    <strong>🏠 Hobby Project:</strong> This is a non-commercial, hobby-run student project. We are not a business, corporation, or commercial entity. This service is provided purely for educational and community purposes with no profit motive.
+                    <strong>Hobby Project:</strong> This is a non-commercial, hobby-run student project. We are not a business, corporation, or commercial entity. This service is provided purely for educational and community purposes with no profit motive. We are located in Germany, Berlin.
                   </p>
                 </div>
               </div>
@@ -107,7 +109,7 @@ export default function PrivacyPolicyPage() {
                 </div>
                 <div className="space-y-2 text-muted-foreground">
                   <p><strong>Email:</strong> legal@eclipsesystems.top</p>
-                  <p><strong>Address:</strong> [Your Business Address]</p>
+                  <p><strong>Address:</strong> Germany, Berlin</p>
                   <p><strong>Data Protection Officer:</strong> legal@eclipsesystems.top</p>
                 </div>
                 <div className="mt-4 p-4 bg-accent/10 rounded-xl">
@@ -199,7 +201,7 @@ export default function PrivacyPolicyPage() {
               <div className="glass-effect rounded-2xl p-6 border border-border/50">
                 <div className="space-y-4">
                   <div className="p-4 bg-green-500/10 rounded-xl border border-green-500/30">
-                    <h4 className="font-bold text-green-600 mb-2">✅ We Do Not Sell Your Data</h4>
+                    <h4 className="font-bold text-green-600 mb-2">We Do Not Sell Your Data</h4>
                     <p className="text-sm text-muted-foreground">
                       We do not sell, rent, or trade your personal information to third parties.
                     </p>
