@@ -64,7 +64,7 @@ export default function TermsOfServicePage() {
                 </p>
                 <div className="p-4 bg-accent/10 rounded-xl border border-accent/30">
                                      <p className="text-sm text-primary">
-                     <strong>Important for US residents:</strong> Section 24 contains an arbitration agreement and a class action/jury trial waiver that affects your rights. Please read it carefully.
+                     <strong>Important for US residents:</strong> Section 13 contains an arbitration agreement and a class action/jury trial waiver that affects your rights. Please read it carefully.
                    </p>
                 </div>
               </div>
