@@ -377,21 +377,21 @@ export default function DocumentationPage() {
 
   const InfoBox = ({ type, children }: { type: "info" | "warning" | "success", children: React.ReactNode }) => {
     const icons = {
-      info: <Info className="w-5 h-5 text-blue-500" />,
-      warning: <AlertCircle className="w-5 h-5 text-yellow-500" />,
-      success: <CheckCircle className="w-5 h-5 text-green-500" />,
+      info: <Info className="w-5 h-5 text-blue-600 dark:text-blue-400 flex-shrink-0 mt-0.5" />,
+      warning: <AlertCircle className="w-5 h-5 text-yellow-600 dark:text-yellow-400 flex-shrink-0 mt-0.5" />,
+      success: <CheckCircle className="w-5 h-5 text-green-600 dark:text-green-400 flex-shrink-0 mt-0.5" />,
     }
     
     const colors = {
-      info: "bg-blue-50 border-blue-200 text-blue-800",
-      warning: "bg-yellow-50 border-yellow-200 text-yellow-800",
-      success: "bg-green-50 border-green-200 text-green-800",
+      info: "bg-blue-50 dark:bg-blue-950/50 border-blue-200 dark:border-blue-800 text-blue-800 dark:text-blue-200",
+      warning: "bg-yellow-50 dark:bg-yellow-950/50 border-yellow-200 dark:border-yellow-800 text-yellow-800 dark:text-yellow-200",
+      success: "bg-green-50 dark:bg-green-950/50 border-green-200 dark:border-green-800 text-green-800 dark:text-green-200",
     }
 
     return (
       <div className={`p-4 rounded-lg border ${colors[type]} flex items-start space-x-3`}>
         {icons[type]}
-        <div className="text-sm">{children}</div>
+        <div className="text-sm leading-relaxed space-y-1">{children}</div>
       </div>
     )
   }
