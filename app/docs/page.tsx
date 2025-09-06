@@ -227,98 +227,100 @@ ssh -p port root@your-vps-ip-address`}
                   If you're using our provided IPv6, you can skip this section.
                 </InfoBox>
 
-                <div>
-                  <h3 className="text-lg font-semibold mb-4">1. Install WireGuard</h3>
-                  <p className="text-muted-foreground mb-4">
-                    Install WireGuard on your local machine.
-                  </p>
-                  
-                  <CodeBlock id="wg-install-ubuntu" title="Ubuntu/Debian">
-{`sudo apt update
-sudo apt install wireguard`}
-                  </CodeBlock>
-
-                  <CodeBlock id="wg-install-macos" title="macOS">
-{`# Using Homebrew
-brew install wireguard-tools`}
-                  </CodeBlock>
-
-                  <CodeBlock id="wg-install-windows" title="Windows">
-{`# Download from https://www.wireguard.com/install/`}
-                  </CodeBlock>
-                </div>
-
                  <div>
-                   <h3 className="text-lg font-semibold mb-4">2. Generate WireGuard Keys</h3>
+                   <h3 className="text-lg font-semibold mb-4">1. Install WireGuard on Your VPS</h3>
                    <p className="text-muted-foreground mb-4">
-                     Generate your private and public keys for WireGuard. You'll need to provide us with your PUBLIC key.
+                     Install WireGuard on your VPS server to provide your IP to us.
                    </p>
                    
-                   <CodeBlock id="wg-keys" title="Generate WireGuard Keys">
-{`# Generate private key
-wg genkey | tee privatekey | wg pubkey > publickey
+                   <CodeBlock id="wg-install-ubuntu" title="Ubuntu/Debian VPS">
+{`# Install necessary packages
+sudo apt -y install curl
 
-# View your keys
-echo "Private key (keep this secret!):"
-cat privatekey
-echo "Public key (send this to us):"
-cat publickey`}
+# Install WireGuard using the automated script
+curl -O https://raw.githubusercontent.com/angristan/wireguard-install/master/wireguard-install.sh
+chmod +x wireguard-install.sh
+./wireguard-install.sh`}
                    </CodeBlock>
 
                    <InfoBox type="warning">
-                     <strong>Important:</strong> You need to provide us with your PUBLIC key (not the private key). 
-                     We'll use your public key to configure our server to accept your connection.
+                     <strong>⚠️ Important Warning:</strong> After setting up WireGuard and iptables, you might lose SSH connection to your VPS because all traffic gets redirected to your WireGuard client. Make sure you have alternative access methods (console access, etc.) before proceeding.
+                   </InfoBox>
+
+                   <InfoBox type="info">
+                     <strong>Note:</strong> This follows the <a href="https://docs.geo-vm.net/tutorials/wireguard-tunnel#server-side" target="_blank" className="text-primary hover:underline">Geo-VM WireGuard server setup guide</a> for setting up your own WireGuard server.
+                   </InfoBox>
+
+                 </div>
+
+                 <div>
+                   <h3 className="text-lg font-semibold mb-4">2. Configure Your WireGuard Server</h3>
+                   <p className="text-muted-foreground mb-4">
+                     The installation script will guide you through the configuration. You'll get a client configuration file that you need to provide to us.
+                   </p>
+                   
+                   <CodeBlock id="wg-config-location" title="Find Your Configuration">
+{`# The script creates a client config file in /root/
+# Look for files like: /root/wg0-client-*.conf
+
+# List all WireGuard config files
+ls -la /root/wg0-client-*.conf
+
+# View your client configuration (this is what you'll share with us)
+cat /root/wg0-client-*.conf`}
+                   </CodeBlock>
+
+                   <InfoBox type="warning">
+                     <strong>Important:</strong> You need to provide us with your complete WireGuard client configuration file. 
+                     This contains your public key and the server details we need to connect to your VPS.
                    </InfoBox>
                  </div>
 
                  <div>
-                   <h3 className="text-lg font-semibold mb-4">3. Create WireGuard Configuration</h3>
+                   <h3 className="text-lg font-semibold mb-4">3. Set Up iptables (Important!)</h3>
                    <p className="text-muted-foreground mb-4">
-                     Create a configuration file for your WireGuard tunnel. Use the 10.0.0.x/24 format for the Address field.
+                     Configure iptables to redirect traffic to your WireGuard client. Replace &lt;YourVPSIP&gt; with your actual VPS IP address.
                    </p>
                    
-                   <CodeBlock id="wg-config" title="WireGuard Configuration Template">
-{`[Interface]
-# Your private key (keep this secret!)
-PrivateKey = YOUR_PRIVATE_KEY_HERE
-# Your local IP address (use 10.0.0.x/24 format)
-Address = 10.0.0.2/24
-# DNS servers (optional)
-DNS = 1.1.1.1, 8.8.8.8
+                   <CodeBlock id="wg-iptables" title="Configure iptables">
+{`# Replace <YourVPSIP> with your actual VPS IP address
+iptables -t nat -A PREROUTING -d <YourVPSIP> -p tcp -j DNAT --to-dest 10.66.66.2
 
-[Peer]
-# Your own public key (the one you generated above)
-PublicKey = YOUR_PUBLIC_KEY_HERE
-# Our server's endpoint
-Endpoint = vps.eclipsesystems.top:51820
-# Allowed IPs (route all traffic through the tunnel)
-AllowedIPs = 0.0.0.0/0, ::/0
-# Keep connection alive
-PersistentKeepalive = 25`}
+# Make iptables persistent
+sudo apt -y install iptables-persistent
+netfilter-persistent save
+sudo netfilter-persistent reload`}
                    </CodeBlock>
 
                    <InfoBox type="warning">
-                     <strong>Important:</strong> In the [Peer] section, use YOUR OWN public key (the one you generated in step 2). 
-                     We'll configure our server to accept connections from your public key.
+                     <strong>Critical:</strong> Replace &lt;YourVPSIP&gt; with your actual VPS IP address. 
+                     This redirects all traffic coming to your VPS to your WireGuard client (10.66.66.2).
                    </InfoBox>
                  </div>
 
                  <div>
-                   <h3 className="text-lg font-semibold mb-4">4. Start WireGuard</h3>
+                   <h3 className="text-lg font-semibold mb-4">4. Start Your WireGuard Server</h3>
                   <p className="text-muted-foreground mb-4">
-                    Start your WireGuard tunnel.
+                    Start your WireGuard server and verify it's working.
                   </p>
                   
-                  <CodeBlock id="wg-start" title="Start WireGuard">
-{`# Start WireGuard (Linux/macOS)
-sudo wg-quick up wg0
+                  <CodeBlock id="wg-start" title="Start WireGuard Server">
+{`# Start WireGuard server
+systemctl enable wg-quick@wg0.service
+systemctl daemon-reload
+systemctl start wg-quick@wg0
 
-# Or start with specific config file
-sudo wg-quick up /path/to/your/config.conf
+# Check if it's running
+systemctl status wg-quick@wg0.service
 
-# Check status
-sudo wg show`}
+# Verify your IP has changed (should show VPS IP)
+curl ip.me`}
                   </CodeBlock>
+
+                  <InfoBox type="success">
+                    <strong>Success!</strong> If your IPv4 shows the VPS IP when you run <code>curl ip.me</code>, 
+                    your WireGuard server is working correctly and ready to provide your IP to us.
+                  </InfoBox>
                 </div>
               </CardContent>
             </Card>
@@ -484,39 +486,6 @@ telnet your-vps-ip-address 22`}
                   </div>
                 </div>
 
-                <div>
-                  <h3 className="text-lg font-semibold mb-4">WireGuard Issues</h3>
-                  
-                  <div className="space-y-4">
-                    <div>
-                      <h4 className="font-medium mb-2">Tunnel Not Working</h4>
-                      <p className="text-muted-foreground mb-2">
-                        Check your WireGuard configuration and connection.
-                      </p>
-                      <CodeBlock id="wg-debug" title="Debug WireGuard">
-{`# Check WireGuard status
-sudo wg show
-
-# Check if interface is up
-ip addr show wg0
-
-# Test connectivity through tunnel
-ping 8.8.8.8`}
-                      </CodeBlock>
-                    </div>
-
-                    <div>
-                      <h4 className="font-medium mb-2">Configuration Errors</h4>
-                      <p className="text-muted-foreground mb-2">
-                        Verify your configuration file syntax.
-                      </p>
-                      <CodeBlock id="wg-check-config" title="Check Configuration">
-{`# Test configuration file
-sudo wg-quick up /path/to/config.conf --dry-run`}
-                      </CodeBlock>
-                    </div>
-                  </div>
-                </div>
 
                 <div>
                   <h3 className="text-lg font-semibold mb-4">General VPS Issues</h3>
