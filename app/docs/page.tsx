@@ -52,8 +52,18 @@ export default function DocumentationPage() {
       sshStep3: "3. Copy Public Key",
       sshStep3Desc: "Copy your public key to use in the VPS application.",
       sshNote: "Note: Never share your private key! Only the public key (ending in .pub) should be shared.",
+      sshNote2: "Note: When prompted for a file location, press Enter to use the default location (~/.ssh/id_ed25519). You can optionally set a passphrase for additional security.",
+      sshTestTitle: "3. Test Your Key",
+      sshTestDesc: "Once your VPS is ready, test the connection.",
+      gsServicesTitle: "5. Install Common Services",
+      gsServicesDesc: "Install popular services you might need.",
+      supportTitle: "Need More Help?",
+      supportDesc: "If you're still having issues, contact our support team at",
+      supportEmail: "support@eclipsesystems.top",
+      supportOr: "or join our Discord server for community support.",
       wgTitle: "WireGuard VPN Setup",
       wgDescription: "Set up WireGuard server on your VPS to provide your IP",
+      wgCardDescription: "Configure WireGuard to route your IPv4/IPv6 addresses through our network.",
       wgNote: "Note: WireGuard configuration is only required if you're using your own IPv4/IPv6 addresses. If you're using our provided IPv6, you can skip this section.",
       wgStep1: "1. Install WireGuard on Your VPS",
       wgStep1Desc: "Install WireGuard on your VPS server to provide your IP to us.",
@@ -114,8 +124,18 @@ export default function DocumentationPage() {
       sshStep3: "3. Копирование публичного ключа",
       sshStep3Desc: "Скопируйте ваш публичный ключ для использования в заявке на VPS.",
       sshNote: "Примечание: Никогда не делитесь вашим приватным ключом! Только публичный ключ (заканчивающийся на .pub) должен быть предоставлен.",
+      sshNote2: "Примечание: При запросе расположения файла нажмите Enter для использования расположения по умолчанию (~/.ssh/id_ed25519). Вы можете дополнительно установить пароль для дополнительной безопасности.",
+      sshTestTitle: "3. Тестирование вашего ключа",
+      sshTestDesc: "Как только ваш VPS готов, протестируйте соединение.",
+      gsServicesTitle: "5. Установка общих сервисов",
+      gsServicesDesc: "Установите популярные сервисы, которые могут вам понадобиться.",
+      supportTitle: "Нужна дополнительная помощь?",
+      supportDesc: "Если у вас все еще есть проблемы, свяжитесь с нашей службой поддержки по адресу",
+      supportEmail: "support@eclipsesystems.top",
+      supportOr: "или присоединяйтесь к нашему Discord серверу для поддержки сообщества.",
       wgTitle: "Настройка WireGuard VPN",
       wgDescription: "Настройте WireGuard сервер на вашем VPS для предоставления вашего IP",
+      wgCardDescription: "Настройте WireGuard для маршрутизации ваших IPv4/IPv6 адресов через нашу сеть.",
       wgNote: "Примечание: Конфигурация WireGuard требуется только если вы используете собственные IPv4/IPv6 адреса. Если вы используете предоставленный нами IPv6, можете пропустить этот раздел.",
       wgStep1: "1. Установка WireGuard на ваш VPS",
       wgStep1Desc: "Установите WireGuard на ваш VPS сервер для предоставления вашего IP нам.",
@@ -176,8 +196,18 @@ export default function DocumentationPage() {
       sshStep3: "3. Öffentlichen Schlüssel kopieren",
       sshStep3Desc: "Kopieren Sie Ihren öffentlichen Schlüssel für die VPS-Bewerbung.",
       sshNote: "Hinweis: Teilen Sie niemals Ihren privaten Schlüssel! Nur der öffentliche Schlüssel (endet mit .pub) sollte geteilt werden.",
+      sshNote2: "Hinweis: Wenn Sie nach einem Dateispeicherort gefragt werden, drücken Sie Enter, um den Standardort (~/.ssh/id_ed25519) zu verwenden. Sie können optional eine Passphrase für zusätzliche Sicherheit festlegen.",
+      sshTestTitle: "3. Testen Sie Ihren Schlüssel",
+      sshTestDesc: "Sobald Ihr VPS bereit ist, testen Sie die Verbindung.",
+      gsServicesTitle: "5. Installieren Sie gängige Dienste",
+      gsServicesDesc: "Installieren Sie beliebte Dienste, die Sie möglicherweise benötigen.",
+      supportTitle: "Brauchen Sie mehr Hilfe?",
+      supportDesc: "Wenn Sie immer noch Probleme haben, kontaktieren Sie unser Support-Team unter",
+      supportEmail: "support@eclipsesystems.top",
+      supportOr: "oder treten Sie unserem Discord-Server für Community-Support bei.",
       wgTitle: "WireGuard VPN-Einrichtung",
       wgDescription: "Richten Sie einen WireGuard-Server auf Ihrem VPS ein, um Ihre IP bereitzustellen",
+      wgCardDescription: "Konfigurieren Sie WireGuard, um Ihre IPv4/IPv6-Adressen über unser Netzwerk zu routen.",
       wgNote: "Hinweis: WireGuard-Konfiguration ist nur erforderlich, wenn Sie Ihre eigenen IPv4/IPv6-Adressen verwenden. Wenn Sie unser bereitgestelltes IPv6 verwenden, können Sie diesen Abschnitt überspringen.",
       wgStep1: "1. WireGuard auf Ihrem VPS installieren",
       wgStep1Desc: "Installieren Sie WireGuard auf Ihrem VPS-Server, um Ihre IP uns zur Verfügung zu stellen.",
@@ -238,8 +268,18 @@ export default function DocumentationPage() {
       sshStep3: "3. 公開キーのコピー",
       sshStep3Desc: "VPSアプリケーションで使用する公開キーをコピーします。",
       sshNote: "注意：秘密キーは絶対に共有しないでください！公開キー（.pubで終わるもの）のみを共有してください。",
+      sshNote2: "注意：ファイルの場所を求められたら、Enterを押してデフォルトの場所（~/.ssh/id_ed25519）を使用してください。追加のセキュリティのためにパスフレーズを設定することもできます。",
+      sshTestTitle: "3. キーのテスト",
+      sshTestDesc: "VPSの準備ができたら、接続をテストしてください。",
+      gsServicesTitle: "5. 一般的なサービスのインストール",
+      gsServicesDesc: "必要になる可能性のある人気のサービスをインストールしてください。",
+      supportTitle: "さらにサポートが必要ですか？",
+      supportDesc: "まだ問題がある場合は、サポートチームにお問い合わせください",
+      supportEmail: "support@eclipsesystems.top",
+      supportOr: "または、コミュニティサポートのためにDiscordサーバーに参加してください。",
       wgTitle: "WireGuard VPNセットアップ",
       wgDescription: "VPSにWireGuardサーバーをセットアップしてIPを提供",
+      wgCardDescription: "WireGuardを設定してIPv4/IPv6アドレスをネットワーク経由でルーティングします。",
       wgNote: "注意：WireGuard設定は、独自のIPv4/IPv6アドレスを使用する場合にのみ必要です。提供されたIPv6を使用する場合は、このセクションをスキップできます。",
       wgStep1: "1. VPSにWireGuardをインストール",
       wgStep1Desc: "VPSサーバーにWireGuardをインストールして、IPを提供します。",
@@ -300,8 +340,18 @@ export default function DocumentationPage() {
       sshStep3: "3. 复制公钥",
       sshStep3Desc: "复制您的公钥以在VPS申请中使用。",
       sshNote: "注意：永远不要分享您的私钥！只有公钥（以.pub结尾）应该被分享。",
+      sshNote2: "注意：当提示文件位置时，按Enter使用默认位置（~/.ssh/id_ed25519）。您可以选择设置密码短语以获得额外安全性。",
+      sshTestTitle: "3. 测试您的密钥",
+      sshTestDesc: "一旦您的VPS准备就绪，测试连接。",
+      gsServicesTitle: "5. 安装常见服务",
+      gsServicesDesc: "安装您可能需要的流行服务。",
+      supportTitle: "需要更多帮助？",
+      supportDesc: "如果您仍然遇到问题，请联系我们的支持团队",
+      supportEmail: "support@eclipsesystems.top",
+      supportOr: "或加入我们的Discord服务器获得社区支持。",
       wgTitle: "WireGuard VPN设置",
       wgDescription: "在您的VPS上设置WireGuard服务器以提供您的IP",
+      wgCardDescription: "配置WireGuard通过我们的网络路由您的IPv4/IPv6地址。",
       wgNote: "注意：只有在使用您自己的IPv4/IPv6地址时才需要WireGuard配置。如果您使用我们提供的IPv6，可以跳过此部分。",
       wgStep1: "1. 在您的VPS上安装WireGuard",
       wgStep1Desc: "在您的VPS服务器上安装WireGuard以向我们提供您的IP。",
@@ -498,8 +548,7 @@ ssh-keygen -t rsa -b 4096 -C "your-email@example.com"`}
                   </CodeBlock>
 
                   <InfoBox type="info">
-                    <strong>Note:</strong> When prompted for a file location, press Enter to use the default location (~/.ssh/id_ed25519). 
-                    You can optionally set a passphrase for additional security.
+                    <strong>Note:</strong> {t.sshNote2}
                   </InfoBox>
                 </div>
 
@@ -524,9 +573,9 @@ cat ~/.ssh/id_rsa.pub`}
                 </div>
 
                 <div>
-                  <h3 className="text-lg font-semibold mb-4">3. Test Your Key</h3>
+                  <h3 className="text-lg font-semibold mb-4">{t.sshTestTitle}</h3>
                   <p className="text-muted-foreground mb-4">
-                    Once your VPS is ready, test the connection.
+                    {t.sshTestDesc}
                   </p>
                   
                   <CodeBlock id="ssh-test" title="Test SSH Connection">
@@ -549,7 +598,7 @@ ssh -p port root@your-vps-ip-address`}
                   <span>WireGuard VPN Setup</span>
                 </CardTitle>
                 <CardDescription>
-                  Configure WireGuard to route your IPv4/IPv6 addresses through our network.
+                  {t.wgCardDescription}
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-6">
@@ -742,9 +791,9 @@ su - yourusername`}
                 </div>
 
                 <div>
-                  <h3 className="text-lg font-semibold mb-4">5. Install Common Services</h3>
+                  <h3 className="text-lg font-semibold mb-4">{t.gsServicesTitle}</h3>
                   <p className="text-muted-foreground mb-4">
-                    Install popular services you might need.
+                    {t.gsServicesDesc}
                   </p>
                   
                   <CodeBlock id="install-services" title="Install Services">
@@ -849,10 +898,10 @@ systemctl restart service-name`}
                 </div>
 
                 <InfoBox type="success">
-                  <strong>Need More Help?</strong> If you're still having issues, contact our support team at{" "}
+                  <strong>{t.supportTitle}</strong> {t.supportDesc}{" "}
                   <a href="mailto:support@eclipsesystems.top" className="text-primary hover:underline">
-                    support@eclipsesystems.top
-                  </a>{" "}or join our Discord server for community support.
+                    {t.supportEmail}
+                  </a>{" "}{t.supportOr}
                 </InfoBox>
               </CardContent>
             </Card>
