@@ -34,6 +34,7 @@ import {
   Award,
   Crown,
   Star as StarIcon,
+  Terminal,
 } from "lucide-react"
 
 // Icon mapping for sponsors
@@ -893,6 +894,16 @@ export default function VPSInitiativePage() {
               <Shield className="w-6 h-6 mr-3 text-primary group-hover:scale-110 transition-transform" />
               {t.showGoods}
             </Button>
+
+            <Button
+              size="lg"
+              variant="outline"
+              className="border-2 border-accent/30 hover:bg-accent/10 bg-transparent shadow-xl hover:shadow-2xl transition-all duration-300 px-10 py-4 text-lg group"
+              onClick={() => window.open('/docs', '_blank')}
+            >
+              <Terminal className="w-6 h-6 mr-3 text-accent group-hover:scale-110 transition-transform" />
+              {t.documentation}
+            </Button>
           </div>
 
           <div className="grid md:grid-cols-3 gap-6 mt-20 max-w-4xl mx-auto">
@@ -1669,22 +1680,22 @@ export default function VPSInitiativePage() {
               <h4 className="text-lg font-semibold text-foreground">{t.resources}</h4>
               <ul className="space-y-3 text-muted-foreground">
                 <li>
-                  <a href="#" className="hover:text-primary transition-colors">
+                  <a href="/docs" className="hover:text-primary transition-colors">
                     {t.documentation}
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-primary transition-colors">
+                  <a href="/docs#getting-started" className="hover:text-primary transition-colors">
                     {t.gettingStarted}
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-primary transition-colors">
+                  <a href="/docs#ssh" className="hover:text-primary transition-colors">
                     {t.sshSetupGuide}
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-primary transition-colors">
+                  <a href="/docs#wireguard" className="hover:text-primary transition-colors">
                     {t.wireguardTutorial}
                   </a>
                 </li>
