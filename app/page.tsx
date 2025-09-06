@@ -2,6 +2,7 @@
 
 import type React from "react"
 import { useState, useEffect } from "react"
+import { sponsors } from "@/lib/sponsors"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -28,7 +29,30 @@ import {
   Github,
   Star,
   Rocket,
+  Heart,
+  Gift,
+  Award,
+  Crown,
+  Star as StarIcon,
 } from "lucide-react"
+
+// Icon mapping for sponsors
+const getSponsorIcon = (iconName?: string) => {
+  const iconMap: { [key: string]: React.ComponentType<any> } = {
+    Users,
+    Server,
+    Sparkles,
+    Heart,
+    Gift,
+    Award,
+    Crown,
+    Star: StarIcon,
+    Shield,
+    Zap,
+    Rocket,
+  }
+  return iconMap[iconName || "Users"] || Users
+}
 
 export default function VPSInitiativePage() {
   const [isSubmitting, setIsSubmitting] = useState(false)
@@ -41,6 +65,7 @@ export default function VPSInitiativePage() {
     githubProfile: "",
     vpsType: "",
     purpose: "",
+    ipOption: "", // "own" or "provided"
     ipv4: "",
     ipv6: "",
     wireguardConfig: "",
@@ -161,6 +186,19 @@ export default function VPSInitiativePage() {
       pleaseAgreeToTerms: "Please agree to the Privacy Policy and Terms of Service to continue.",
       applicationSubmitted: "Application submitted successfully! We'll review it within 24-48 hours.",
       failedToSubmit: "Failed to submit application. Please try again.",
+      // Sponsors section
+      sponsors: "Our Amazing Sponsors",
+      sponsorsDescription: "These incredible people and organizations help make our VPS initiative possible",
+      becomeSponsor: "Become a Sponsor",
+      // IP Options
+      ipConfiguration: "IP Configuration",
+      chooseIpOption: "Choose your IP configuration",
+      ownIpv4v6: "I have my own IPv4 and IPv6 addresses",
+      useProvidedIpv6: "I want to use your provided IPv6 only",
+      ownIpDescription: "You'll need to provide your own IPv4 and IPv6 addresses and WireGuard configuration",
+      providedIpDescription: "We'll provide you with an IPv6 address - no WireGuard configuration needed",
+      wireguardRequired: "WireGuard configuration required",
+      wireguardNotRequired: "WireGuard configuration not needed",
     },
     de: {
       title: "Kostenloser VPS Der Tatsächlich Funktioniert",
@@ -274,6 +312,19 @@ export default function VPSInitiativePage() {
       pleaseAgreeToTerms: "Bitte stimme der Datenschutzrichtlinie und den Nutzungsbedingungen zu, um fortzufahren.",
       applicationSubmitted: "Bewerbung erfolgreich eingereicht! Wir werden sie innerhalb von 24-48 Stunden überprüfen.",
       failedToSubmit: "Bewerbung konnte nicht eingereicht werden. Bitte versuche es erneut.",
+      // Sponsors section
+      sponsors: "Unsere erstaunlichen Sponsoren",
+      sponsorsDescription: "Diese unglaublichen Menschen und Organisationen helfen dabei, unsere VPS-Initiative möglich zu machen",
+      becomeSponsor: "Sponsor werden",
+      // IP Options
+      ipConfiguration: "IP-Konfiguration",
+      chooseIpOption: "Wähle deine IP-Konfiguration",
+      ownIpv4v6: "Ich habe meine eigenen IPv4 und IPv6 Adressen",
+      useProvidedIpv6: "Ich möchte nur eure bereitgestellte IPv6 verwenden",
+      ownIpDescription: "Du musst deine eigenen IPv4 und IPv6 Adressen und WireGuard-Konfiguration bereitstellen",
+      providedIpDescription: "Wir stellen dir eine IPv6-Adresse zur Verfügung - keine WireGuard-Konfiguration erforderlich",
+      wireguardRequired: "WireGuard-Konfiguration erforderlich",
+      wireguardNotRequired: "WireGuard-Konfiguration nicht erforderlich",
     },
     ru: {
       title: "Бесплатный VPS Который Реально Работает",
@@ -387,6 +438,19 @@ export default function VPSInitiativePage() {
       pleaseAgreeToTerms: "Пожалуйста, согласитесь с Политикой конфиденциальности и Условиями обслуживания, чтобы продолжить.",
       applicationSubmitted: "Заявка успешно отправлена! Мы рассмотрим её в течение 24-48 часов.",
       failedToSubmit: "Не удалось отправить заявку. Пожалуйста, попробуйте снова.",
+      // Sponsors section
+      sponsors: "Наши удивительные спонсоры",
+      sponsorsDescription: "Эти невероятные люди и организации помогают сделать нашу VPS инициативу возможной",
+      becomeSponsor: "Стать спонсором",
+      // IP Options
+      ipConfiguration: "Конфигурация IP",
+      chooseIpOption: "Выберите конфигурацию IP",
+      ownIpv4v6: "У меня есть собственные IPv4 и IPv6 адреса",
+      useProvidedIpv6: "Я хочу использовать только предоставленный вами IPv6",
+      ownIpDescription: "Вам нужно предоставить собственные IPv4 и IPv6 адреса и конфигурацию WireGuard",
+      providedIpDescription: "Мы предоставим вам IPv6 адрес - конфигурация WireGuard не нужна",
+      wireguardRequired: "Конфигурация WireGuard требуется",
+      wireguardNotRequired: "Конфигурация WireGuard не требуется",
     },
     ja: {
       title: "実際に動作する無料VPS",
@@ -500,6 +564,19 @@ export default function VPSInitiativePage() {
       pleaseAgreeToTerms: "続行するには、プライバシーポリシーと利用規約に同意してください。",
       applicationSubmitted: "アプリケーションが正常に送信されました！24-48時間以内にレビューします。",
       failedToSubmit: "アプリケーションの送信に失敗しました。もう一度お試しください。",
+      // Sponsors section
+      sponsors: "私たちの素晴らしいスポンサー",
+      sponsorsDescription: "これらの信じられないほどの人々と組織が私たちのVPSイニシアチブを可能にしています",
+      becomeSponsor: "スポンサーになる",
+      // IP Options
+      ipConfiguration: "IP設定",
+      chooseIpOption: "IP設定を選択",
+      ownIpv4v6: "独自のIPv4とIPv6アドレスを持っています",
+      useProvidedIpv6: "提供されたIPv6のみを使用したい",
+      ownIpDescription: "独自のIPv4とIPv6アドレス、およびWireGuard設定を提供する必要があります",
+      providedIpDescription: "IPv6アドレスを提供します - WireGuard設定は不要です",
+      wireguardRequired: "WireGuard設定が必要",
+      wireguardNotRequired: "WireGuard設定は不要",
     },
     zh: {
       title: "真正有效的免费VPS",
@@ -616,6 +693,19 @@ export default function VPSInitiativePage() {
       pleaseAgreeToTerms: "请同意隐私政策和服务条款以继续。",
       applicationSubmitted: "申请提交成功！我们将在24-48小时内审核。",
       failedToSubmit: "申请提交失败。请重试。",
+      // Sponsors section
+      sponsors: "我们令人惊叹的赞助商",
+      sponsorsDescription: "这些令人难以置信的人和组织帮助使我们的VPS倡议成为可能",
+      becomeSponsor: "成为赞助商",
+      // IP Options
+      ipConfiguration: "IP配置",
+      chooseIpOption: "选择您的IP配置",
+      ownIpv4v6: "我有自己的IPv4和IPv6地址",
+      useProvidedIpv6: "我想只使用您提供的IPv6",
+      ownIpDescription: "您需要提供自己的IPv4和IPv6地址以及WireGuard配置",
+      providedIpDescription: "我们将为您提供IPv6地址 - 不需要WireGuard配置",
+      wireguardRequired: "需要WireGuard配置",
+      wireguardNotRequired: "不需要WireGuard配置",
     },
   }
 
@@ -652,6 +742,20 @@ export default function VPSInitiativePage() {
       return
     }
 
+    // Validate IP option selection
+    if (!formData.ipOption) {
+      alert("Please select an IP configuration option")
+      return
+    }
+
+    // Validate required fields based on IP option
+    if (formData.ipOption === "own") {
+      if (!formData.ipv4 || !formData.wireguardConfig) {
+        alert("Please fill in all required fields for your own IP configuration")
+        return
+      }
+    }
+
     setIsSubmitting(true)
 
     try {
@@ -672,6 +776,7 @@ export default function VPSInitiativePage() {
           githubProfile: "",
           vpsType: "",
           purpose: "",
+          ipOption: "",
           ipv4: "",
           ipv6: "",
           wireguardConfig: "",
@@ -1275,56 +1380,129 @@ export default function VPSInitiativePage() {
                 <div className="space-y-6 p-8 glass-effect rounded-2xl border border-border/50">
                   <h3 className="text-xl font-semibold text-foreground flex items-center space-x-2">
                     <Globe className="w-5 h-5 text-accent" />
-                    <span>{t.networkStuff}</span>
+                    <span>{t.ipConfiguration}</span>
                   </h3>
 
-                  <div className="grid md:grid-cols-2 gap-6">
-                    <div className="space-y-2">
-                      <Label htmlFor="ipv4" className="text-foreground font-medium">
-                        {t.ipv4Address} <span className="text-destructive">*</span>
-                      </Label>
-                      <Input
-                        id="ipv4"
-                        placeholder={t.ipv4Placeholder}
-                        className="bg-background/50 border-border focus:ring-primary h-12"
-                        value={formData.ipv4}
-                        onChange={(e) => handleInputChange("ipv4", e.target.value)}
-                        required
-                      />
-                      <p className="text-sm text-muted-foreground">{t.ipv4Description}</p>
-                    </div>
-
-                    <div className="space-y-2">
-                      <Label htmlFor="ipv6" className="text-foreground font-medium">
-                        {t.ipv6Address} <span className="text-muted-foreground">{t.optional}</span>
-                      </Label>
-                      <Input
-                        id="ipv6"
-                        placeholder={t.ipv6Placeholder}
-                        className="bg-background/50 border-border focus:ring-primary h-12"
-                        value={formData.ipv6}
-                        onChange={(e) => handleInputChange("ipv6", e.target.value)}
-                      />
-                      <p className="text-sm text-muted-foreground">{t.ipv6Description}</p>
-                    </div>
-                  </div>
-
-                  <div className="space-y-2">
-                    <Label htmlFor="wireguard-config" className="text-foreground font-medium">
-                      {t.wireguardConfiguration}
+                  <div className="space-y-4">
+                    <Label className="text-foreground font-medium">
+                      {t.chooseIpOption}
                     </Label>
-                    <Textarea
-                      id="wireguard-config"
-                      placeholder={t.wireguardPlaceholder}
-                      className="bg-background/50 border-border focus:ring-primary min-h-[140px] font-mono text-sm resize-none"
-                      value={formData.wireguardConfig}
-                      onChange={(e) => handleInputChange("wireguardConfig", e.target.value)}
-                      required
-                    />
-                    <p className="text-sm text-muted-foreground">
-                      {t.wireguardDescription}
-                    </p>
+                    <div className="grid md:grid-cols-2 gap-4">
+                      <div 
+                        className={`p-4 border-2 rounded-xl cursor-pointer transition-all duration-200 ${
+                          formData.ipOption === "own" 
+                            ? "border-primary bg-primary/5" 
+                            : "border-border hover:border-primary/50"
+                        }`}
+                        onClick={() => handleInputChange("ipOption", "own")}
+                      >
+                        <div className="flex items-center space-x-3">
+                          <div className={`w-4 h-4 rounded-full border-2 ${
+                            formData.ipOption === "own" 
+                              ? "border-primary bg-primary" 
+                              : "border-border"
+                          }`}>
+                            {formData.ipOption === "own" && (
+                              <div className="w-2 h-2 bg-white rounded-full m-0.5"></div>
+                            )}
+                          </div>
+                          <div>
+                            <div className="font-medium text-foreground">{t.ownIpv4v6}</div>
+                            <div className="text-sm text-muted-foreground">{t.ownIpDescription}</div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div 
+                        className={`p-4 border-2 rounded-xl cursor-pointer transition-all duration-200 ${
+                          formData.ipOption === "provided" 
+                            ? "border-primary bg-primary/5" 
+                            : "border-border hover:border-primary/50"
+                        }`}
+                        onClick={() => handleInputChange("ipOption", "provided")}
+                      >
+                        <div className="flex items-center space-x-3">
+                          <div className={`w-4 h-4 rounded-full border-2 ${
+                            formData.ipOption === "provided" 
+                              ? "border-primary bg-primary" 
+                              : "border-border"
+                          }`}>
+                            {formData.ipOption === "provided" && (
+                              <div className="w-2 h-2 bg-white rounded-full m-0.5"></div>
+                            )}
+                          </div>
+                          <div>
+                            <div className="font-medium text-foreground">{t.useProvidedIpv6}</div>
+                            <div className="text-sm text-muted-foreground">{t.providedIpDescription}</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
+
+                  {formData.ipOption === "own" && (
+                    <>
+                      <div className="grid md:grid-cols-2 gap-6">
+                        <div className="space-y-2">
+                          <Label htmlFor="ipv4" className="text-foreground font-medium">
+                            {t.ipv4Address} <span className="text-destructive">*</span>
+                          </Label>
+                          <Input
+                            id="ipv4"
+                            placeholder={t.ipv4Placeholder}
+                            className="bg-background/50 border-border focus:ring-primary h-12"
+                            value={formData.ipv4}
+                            onChange={(e) => handleInputChange("ipv4", e.target.value)}
+                            required
+                          />
+                          <p className="text-sm text-muted-foreground">{t.ipv4Description}</p>
+                        </div>
+
+                        <div className="space-y-2">
+                          <Label htmlFor="ipv6" className="text-foreground font-medium">
+                            {t.ipv6Address} <span className="text-muted-foreground">{t.optional}</span>
+                          </Label>
+                          <Input
+                            id="ipv6"
+                            placeholder={t.ipv6Placeholder}
+                            className="bg-background/50 border-border focus:ring-primary h-12"
+                            value={formData.ipv6}
+                            onChange={(e) => handleInputChange("ipv6", e.target.value)}
+                          />
+                          <p className="text-sm text-muted-foreground">{t.ipv6Description}</p>
+                        </div>
+                      </div>
+
+                      <div className="space-y-2">
+                        <Label htmlFor="wireguard-config" className="text-foreground font-medium">
+                          {t.wireguardConfiguration} <span className="text-destructive">*</span>
+                        </Label>
+                        <Textarea
+                          id="wireguard-config"
+                          placeholder={t.wireguardPlaceholder}
+                          className="bg-background/50 border-border focus:ring-primary min-h-[140px] font-mono text-sm resize-none"
+                          value={formData.wireguardConfig}
+                          onChange={(e) => handleInputChange("wireguardConfig", e.target.value)}
+                          required
+                        />
+                        <p className="text-sm text-muted-foreground">
+                          {t.wireguardDescription}
+                        </p>
+                      </div>
+                    </>
+                  )}
+
+                  {formData.ipOption === "provided" && (
+                    <div className="p-4 bg-primary/5 border border-primary/20 rounded-xl">
+                      <div className="flex items-center space-x-2 text-primary">
+                        <CheckCircle className="w-5 h-5" />
+                        <span className="font-medium">{t.wireguardNotRequired}</span>
+                      </div>
+                      <p className="text-sm text-muted-foreground mt-2">
+                        {t.providedIpDescription}
+                      </p>
+                    </div>
+                  )}
                 </div>
 
                 {/* SSH Authentication */}
@@ -1404,6 +1582,62 @@ export default function VPSInitiativePage() {
               </form>
             </CardContent>
           </Card>
+        </div>
+      </section>
+
+      {/* Sponsors Section */}
+      <section className="py-24 px-6 bg-muted/30 relative">
+        <div className="container mx-auto max-w-6xl relative z-10">
+          <div className="text-center mb-16">
+            <Badge variant="outline" className="mb-6 border-primary/30 text-primary">
+              <Users className="w-4 h-4 mr-2" />
+              {t.sponsors}
+            </Badge>
+            <h2 className="text-5xl font-bold text-foreground mb-6">{t.sponsors}</h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              {t.sponsorsDescription}
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+            {sponsors.map((sponsor, index) => {
+              const IconComponent = getSponsorIcon(sponsor.icon)
+              return (
+                <Card key={index} className="glass-effect border-border hover:border-primary/30 hover:scale-105 transition-all duration-300 group relative overflow-hidden">
+                  <div className="absolute inset-0 cosmic-gradient opacity-0 group-hover:opacity-5 transition-opacity"></div>
+                  <CardContent className="p-6 text-center relative z-10">
+                    <div className="w-16 h-16 cosmic-gradient rounded-2xl flex items-center justify-center mb-4 mx-auto group-hover:scale-110 transition-transform">
+                      <IconComponent className="w-8 h-8 text-white" />
+                    </div>
+                    <h3 className="font-semibold text-foreground mb-2">{sponsor.name}</h3>
+                    <p className="text-sm text-muted-foreground mb-3">{sponsor.role}</p>
+                    {sponsor.isAnonymous ? (
+                      <span className="text-muted-foreground text-sm">Anonymous donation</span>
+                    ) : sponsor.link ? (
+                      <a 
+                        href={sponsor.link.startsWith('@') ? `https://github.com/${sponsor.link.slice(1)}` : sponsor.link.startsWith('http') ? sponsor.link : `https://${sponsor.link}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-primary hover:underline text-sm"
+                      >
+                        {sponsor.link}
+                      </a>
+                    ) : null}
+                  </CardContent>
+                </Card>
+              )
+            })}
+          </div>
+
+          <div className="text-center">
+            <Button
+              variant="outline"
+              className="border-2 border-primary/30 hover:bg-primary/10 bg-transparent shadow-xl hover:shadow-2xl transition-all duration-300 px-8 py-3 text-lg group"
+            >
+              <Users className="w-5 h-5 mr-2 text-primary group-hover:scale-110 transition-transform" />
+              {t.becomeSponsor}
+            </Button>
+          </div>
         </div>
       </section>
 
