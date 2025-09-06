@@ -19,7 +19,7 @@ export const sponsors: Sponsor[] = [
     icon: "Star"
   },
   {
-    name: "Dennis Akid",
+    name: "Dennis Kidman",
     role: "Hardware and Domain Sponsor",
     icon: "Sparkles"
   }
