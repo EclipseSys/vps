@@ -853,10 +853,10 @@ systemctl restart service-name`}
                 </div>
 
                 <InfoBox type="success">
-                  <strong>Need More Help?</strong> If you're still having issues, contact our support team at 
+                  <strong>Need More Help?</strong> If you're still having issues, contact our support team at{" "}
                   <a href="mailto:support@eclipsesystems.top" className="text-primary hover:underline">
                     support@eclipsesystems.top
-                  </a> or join our Discord server for community support.
+                  </a>{" "}or join our Discord server for community support.
                 </InfoBox>
               </CardContent>
             </Card>
