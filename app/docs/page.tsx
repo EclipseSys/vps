@@ -484,9 +484,9 @@ export default function DocumentationPage() {
               </CardHeader>
               <CardContent className="space-y-6">
                 <div>
-                  <h3 className="text-lg font-semibold mb-4">1. Generate SSH Key Pair</h3>
+                  <h3 className="text-lg font-semibold mb-4">{t.sshStep1}</h3>
                   <p className="text-muted-foreground mb-4">
-                    First, generate a new SSH key pair on your local machine. We recommend using Ed25519 for better security.
+                    {t.sshStep1Desc}
                   </p>
                   
                   <CodeBlock id="ssh-generate" title="Generate Ed25519 SSH Key">
@@ -504,9 +504,9 @@ ssh-keygen -t rsa -b 4096 -C "your-email@example.com"`}
                 </div>
 
                 <div>
-                  <h3 className="text-lg font-semibold mb-4">2. Copy Your Public Key</h3>
+                  <h3 className="text-lg font-semibold mb-4">{t.sshStep3}</h3>
                   <p className="text-muted-foreground mb-4">
-                    Copy your public key to use in the VPS application form.
+                    {t.sshStep3Desc}
                   </p>
                   
                   <CodeBlock id="ssh-copy" title="Copy Public Key">
@@ -554,14 +554,13 @@ ssh -p port root@your-vps-ip-address`}
               </CardHeader>
               <CardContent className="space-y-6">
                 <InfoBox type="info">
-                  <strong>Note:</strong> WireGuard configuration is only required if you're using your own IPv4/IPv6 addresses. 
-                  If you're using our provided IPv6, you can skip this section.
+                  <strong>Note:</strong> {t.wgNote}
                 </InfoBox>
 
                  <div>
-                   <h3 className="text-lg font-semibold mb-4">1. Install WireGuard on Your VPS</h3>
+                   <h3 className="text-lg font-semibold mb-4">{t.wgStep1}</h3>
                    <p className="text-muted-foreground mb-4">
-                     Install WireGuard on your VPS server to provide your IP to us.
+                     {t.wgStep1Desc}
                    </p>
                    
                    <CodeBlock id="wg-install-ubuntu" title="Ubuntu/Debian VPS">
@@ -575,19 +574,19 @@ chmod +x wireguard-install.sh
                    </CodeBlock>
 
                    <InfoBox type="warning">
-                     <strong>⚠️ Important Warning:</strong> After setting up WireGuard and iptables, you might lose SSH connection to your VPS because all traffic gets redirected to your WireGuard client. Make sure you have alternative access methods (console access, etc.) before proceeding.
+                     <strong>⚠️ Important Warning:</strong> {t.wgWarning}
                    </InfoBox>
 
                    <InfoBox type="info">
-                     <strong>Note:</strong> This follows the <a href="https://docs.geo-vm.net/tutorials/wireguard-tunnel#server-side" target="_blank" className="text-primary hover:underline">Geo-VM WireGuard server setup guide</a> for setting up your own WireGuard server.
+                     <strong>Note:</strong> {t.wgNote2}
                    </InfoBox>
 
                  </div>
 
                  <div>
-                   <h3 className="text-lg font-semibold mb-4">2. Configure Your WireGuard Server</h3>
+                   <h3 className="text-lg font-semibold mb-4">{t.wgStep2}</h3>
                    <p className="text-muted-foreground mb-4">
-                     The installation script will guide you through the configuration. You'll get a client configuration file that you need to provide to us.
+                     {t.wgStep2Desc}
                    </p>
                    
                    <CodeBlock id="wg-config-location" title="Find Your Configuration">
@@ -602,15 +601,14 @@ cat /root/wg0-client-*.conf`}
                    </CodeBlock>
 
                    <InfoBox type="warning">
-                     <strong>Important:</strong> You need to provide us with your complete WireGuard client configuration file. 
-                     This contains your public key and the server details we need to connect to your VPS.
+                     <strong>Important:</strong> {t.wgStep2Important}
                    </InfoBox>
                  </div>
 
                  <div>
-                   <h3 className="text-lg font-semibold mb-4">3. Set Up iptables (Important!)</h3>
+                   <h3 className="text-lg font-semibold mb-4">{t.wgStep3}</h3>
                    <p className="text-muted-foreground mb-4">
-                     Configure iptables to redirect traffic to your WireGuard client. Replace &lt;YourVPSIP&gt; with your actual VPS IP address.
+                     {t.wgStep3Desc}
                    </p>
                    
                    <CodeBlock id="wg-iptables" title="Configure iptables">
@@ -624,15 +622,14 @@ sudo netfilter-persistent reload`}
                    </CodeBlock>
 
                    <InfoBox type="warning">
-                     <strong>Critical:</strong> Replace &lt;YourVPSIP&gt; with your actual VPS IP address. 
-                     This redirects all traffic coming to your VPS to your WireGuard client (10.66.66.2).
+                     <strong>Critical:</strong> {t.wgStep3Critical}
                    </InfoBox>
                  </div>
 
                  <div>
-                   <h3 className="text-lg font-semibold mb-4">4. Start Your WireGuard Server</h3>
+                   <h3 className="text-lg font-semibold mb-4">{t.wgStep4}</h3>
                   <p className="text-muted-foreground mb-4">
-                    Start your WireGuard server and verify it's working.
+                    {t.wgStep4Desc}
                   </p>
                   
                   <CodeBlock id="wg-start" title="Start WireGuard Server">
@@ -649,8 +646,7 @@ curl ip.me`}
                   </CodeBlock>
 
                   <InfoBox type="success">
-                    <strong>Success!</strong> If your IPv4 shows the VPS IP when you run <code>curl ip.me</code>, 
-                    your WireGuard server is working correctly and ready to provide your IP to us.
+                    <strong>Success!</strong> {t.wgSuccess}
                   </InfoBox>
                 </div>
               </CardContent>
@@ -662,17 +658,17 @@ curl ip.me`}
               <CardHeader>
                 <CardTitle className="flex items-center space-x-2">
                   <Server className="w-6 h-6 text-primary" />
-                  <span>Getting Started with Your VPS</span>
+                  <span>{t.gettingStartedTitle}</span>
                 </CardTitle>
                 <CardDescription>
-                  First steps after receiving your VPS access credentials.
+                  {t.gettingStartedDesc}
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-6">
                 <div>
-                  <h3 className="text-lg font-semibold mb-4">1. Initial Connection</h3>
+                  <h3 className="text-lg font-semibold mb-4">{t.gsStep1}</h3>
                   <p className="text-muted-foreground mb-4">
-                    Connect to your VPS for the first time.
+                    {t.gsStep1Desc}
                   </p>
                   
                   <CodeBlock id="initial-connect" title="Connect to VPS">
@@ -685,9 +681,9 @@ ssh -p 2222 root@your-vps-ip-address`}
                 </div>
 
                 <div>
-                  <h3 className="text-lg font-semibold mb-4">2. Update System</h3>
+                  <h3 className="text-lg font-semibold mb-4">{t.gsStep2}</h3>
                   <p className="text-muted-foreground mb-4">
-                    Update your VPS to the latest packages.
+                    {t.gsStep2Desc}
                   </p>
                   
                   <CodeBlock id="update-system" title="Update System">
@@ -703,9 +699,9 @@ apt install -y curl wget git vim nano htop`}
                 </div>
 
                 <div>
-                  <h3 className="text-lg font-semibold mb-4">3. Configure Firewall</h3>
+                  <h3 className="text-lg font-semibold mb-4">{t.gsStep4}</h3>
                   <p className="text-muted-foreground mb-4">
-                    Set up basic firewall rules for security.
+                    {t.gsStep4Desc}
                   </p>
                   
                   <CodeBlock id="firewall-setup" title="Configure UFW Firewall">
@@ -728,9 +724,9 @@ ufw status`}
                 </div>
 
                 <div>
-                  <h3 className="text-lg font-semibold mb-4">4. Create Non-Root User</h3>
+                  <h3 className="text-lg font-semibold mb-4">{t.gsStep5}</h3>
                   <p className="text-muted-foreground mb-4">
-                    Create a regular user for daily operations.
+                    {t.gsStep5Desc}
                   </p>
                   
                   <CodeBlock id="create-user" title="Create User">
@@ -776,21 +772,21 @@ apt install -y nginx`}
               <CardHeader>
                 <CardTitle className="flex items-center space-x-2">
                   <Terminal className="w-6 h-6 text-primary" />
-                  <span>Troubleshooting Common Issues</span>
+                  <span>{t.troubleshootingTitle}</span>
                 </CardTitle>
                 <CardDescription>
-                  Solutions to common problems you might encounter.
+                  {t.troubleshootingDesc}
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-6">
                 <div>
-                  <h3 className="text-lg font-semibold mb-4">SSH Connection Issues</h3>
+                  <h3 className="text-lg font-semibold mb-4">{t.sshIssues}</h3>
                   
                   <div className="space-y-4">
                     <div>
-                      <h4 className="font-medium mb-2">Permission Denied (publickey)</h4>
+                      <h4 className="font-medium mb-2">{t.sshIssue1}</h4>
                       <p className="text-muted-foreground mb-2">
-                        This usually means your SSH key isn't properly configured.
+                        {t.sshIssue1Desc}
                       </p>
                       <CodeBlock id="ssh-debug" title="Debug SSH Connection">
 {`# Test SSH connection with verbose output
@@ -802,9 +798,9 @@ ssh -i ~/.ssh/id_ed25519 root@your-vps-ip-address`}
                     </div>
 
                     <div>
-                      <h4 className="font-medium mb-2">Connection Refused</h4>
+                      <h4 className="font-medium mb-2">{t.sshIssue2}</h4>
                       <p className="text-muted-foreground mb-2">
-                        The VPS might be down or the IP address is incorrect.
+                        {t.sshIssue2Desc}
                       </p>
                       <CodeBlock id="ping-test" title="Test Connectivity">
 {`# Ping the server
@@ -819,11 +815,11 @@ telnet your-vps-ip-address 22`}
 
 
                 <div>
-                  <h3 className="text-lg font-semibold mb-4">General VPS Issues</h3>
+                  <h3 className="text-lg font-semibold mb-4">{t.generalIssues}</h3>
                   
                   <div className="space-y-4">
                     <div>
-                      <h4 className="font-medium mb-2">High CPU/Memory Usage</h4>
+                      <h4 className="font-medium mb-2">{t.generalIssue1}</h4>
                       <CodeBlock id="check-resources" title="Check Resource Usage">
 {`# Check system resources
 htop
@@ -837,7 +833,7 @@ free -h`}
                     </div>
 
                     <div>
-                      <h4 className="font-medium mb-2">Service Won't Start</h4>
+                      <h4 className="font-medium mb-2">{t.generalIssue2}</h4>
                       <CodeBlock id="check-services" title="Check Service Status">
 {`# Check service status
 systemctl status service-name
