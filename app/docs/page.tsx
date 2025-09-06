@@ -427,13 +427,13 @@ export default function DocumentationPage() {
                 <SelectItem value="zh">中文</SelectItem>
               </SelectContent>
             </Select>
-          <Button
-            variant="outline"
-            onClick={() => window.history.back()}
-          >
-            ← Back to VPS Initiative
-          </Button>
-        </div>
+            <Button
+              variant="outline"
+              onClick={() => window.history.back()}
+            >
+              ← Back to VPS Initiative
+            </Button>
+          </div>
       </header>
 
       <div className="container mx-auto px-6 py-12 max-w-6xl">
