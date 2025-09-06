@@ -434,6 +434,7 @@ export default function DocumentationPage() {
               ← Back to VPS Initiative
             </Button>
           </div>
+        </div>
       </header>
 
       <div className="container mx-auto px-6 py-12 max-w-6xl">
