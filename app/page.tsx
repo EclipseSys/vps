@@ -1633,6 +1633,7 @@ export default function VPSInitiativePage() {
             <Button
               variant="outline"
               className="border-2 border-primary/30 hover:bg-primary/10 bg-transparent shadow-xl hover:shadow-2xl transition-all duration-300 px-8 py-3 text-lg group"
+              onClick={() => window.open('mailto:contact@eclipsesystems.top?subject=VPS Initiative Sponsorship Inquiry', '_blank')}
             >
               <Users className="w-5 h-5 mr-2 text-primary group-hover:scale-110 transition-transform" />
               {t.becomeSponsor}
