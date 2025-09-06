@@ -901,7 +901,7 @@ export default function VPSInitiativePage() {
               className="border-2 border-accent/30 hover:bg-accent/10 bg-transparent shadow-xl hover:shadow-2xl transition-all duration-300 px-10 py-4 text-lg group"
               onClick={() => window.open('/docs', '_blank')}
             >
-              <Terminal className="w-6 h-6 mr-3 text-accent group-hover:scale-110 transition-transform" />
+              <Terminal className="w-6 h-6 mr-3 text-foreground group-hover:scale-110 transition-transform" />
               {t.documentation}
             </Button>
           </div>
