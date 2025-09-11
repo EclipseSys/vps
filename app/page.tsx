@@ -1623,6 +1623,7 @@ export default function VPSInitiativePage() {
                       ? `inline-grid ${rowSponsors.length === 1 ? 'grid-cols-1' : 'grid-cols-2'}`
                       : 'grid md:grid-cols-2 lg:grid-cols-3'
                   }`}
+                  style={isShortRow ? { minWidth: '768px' } : {}}
                 >
                   {rowSponsors.map((sponsor, index) => {
                     const IconComponent = getSponsorIcon(sponsor.icon)
