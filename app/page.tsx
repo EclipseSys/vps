@@ -1609,42 +1609,66 @@ export default function VPSInitiativePage() {
               {t.sponsorsDescription}
             </p>
           </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-            {sponsors.map((sponsor, index) => {
-              const IconComponent = getSponsorIcon(sponsor.icon)
-              return (
-                <Card key={index} className="glass-effect border-border hover:border-primary/30 hover:scale-105 transition-all duration-300 group relative overflow-hidden">
-                  <div className="absolute inset-0 cosmic-gradient opacity-0 group-hover:opacity-5 transition-opacity"></div>
-                  <CardContent className="p-6 text-center relative z-10">
-                    <div className="w-16 h-16 cosmic-gradient rounded-2xl flex items-center justify-center mb-4 mx-auto group-hover:scale-110 transition-transform">
-                      <IconComponent className="w-8 h-8 text-white" />
-                    </div>
-                    <h3 className="font-semibold text-foreground mb-2">{sponsor.name}</h3>
-                    <p className="text-sm text-muted-foreground mb-3">{sponsor.role}</p>
-                    {sponsor.isAnonymous ? (
-                      <span className="text-muted-foreground text-sm">Anonymous donation</span>
-                    ) : sponsor.link ? (
-                      <a 
-                        href={sponsor.link.startsWith('@') ? `https://github.com/${sponsor.link.slice(1)}` : sponsor.link.startsWith('http') ? sponsor.link : `https://${sponsor.link}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-primary hover:underline text-sm"
-                      >
-                        {sponsor.link}
-                      </a>
-                    ) : null}
-                  </CardContent>
-                </Card>
-              )
-            })}
+      
+          <div className="flex justify-center">
+            <div
+              className={`grid gap-8 mb-12 ${
+                sponsors.length === 1
+                  ? 'grid-cols-1'
+                  : sponsors.length === 2
+                  ? 'grid-cols-2'
+                  : 'md:grid-cols-2 lg:grid-cols-3'
+              }`}
+            >
+              {sponsors.map((sponsor, index) => {
+                const IconComponent = getSponsorIcon(sponsor.icon)
+                return (
+                  <Card
+                    key={index}
+                    className="glass-effect border-border hover:border-primary/30 hover:scale-105 transition-all duration-300 group relative overflow-hidden"
+                  >
+                    <div className="absolute inset-0 cosmic-gradient opacity-0 group-hover:opacity-5 transition-opacity"></div>
+                    <CardContent className="p-6 text-center relative z-10">
+                      <div className="w-16 h-16 cosmic-gradient rounded-2xl flex items-center justify-center mb-4 mx-auto group-hover:scale-110 transition-transform">
+                        <IconComponent className="w-8 h-8 text-white" />
+                      </div>
+                      <h3 className="font-semibold text-foreground mb-2">{sponsor.name}</h3>
+                      <p className="text-sm text-muted-foreground mb-3">{sponsor.role}</p>
+                      {sponsor.isAnonymous ? (
+                        <span className="text-muted-foreground text-sm">Anonymous donation</span>
+                      ) : sponsor.link ? (
+                        <a
+                          href={
+                            sponsor.link.startsWith('@')
+                              ? `https://github.com/${sponsor.link.slice(1)}`
+                              : sponsor.link.startsWith('http')
+                              ? sponsor.link
+                              : `https://${sponsor.link}`
+                          }
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-primary hover:underline text-sm"
+                        >
+                          {sponsor.link}
+                        </a>
+                      ) : null}
+                    </CardContent>
+                  </Card>
+                )
+              })}
+            </div>
           </div>
-
+      
           <div className="text-center">
             <Button
               variant="outline"
               className="border-2 border-primary/30 hover:bg-primary/10 bg-transparent shadow-xl hover:shadow-2xl transition-all duration-300 px-8 py-3 text-lg group"
-              onClick={() => window.open('mailto:contact@eclipsesystems.top?subject=VPS Initiative Sponsorship Inquiry', '_blank')}
+              onClick={() =>
+                window.open(
+                  'mailto:contact@eclipsesystems.top?subject=VPS Initiative Sponsorship Inquiry',
+                  '_blank'
+                )
+              }
             >
               <Users className="w-5 h-5 mr-2 text-primary group-hover:scale-110 transition-transform" />
               {t.becomeSponsor}
