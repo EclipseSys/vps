@@ -17,17 +17,17 @@ export const sponsors: Sponsor[] = [
     name: "FoxDevLab",
     role: "IPv4/6 Sponsor & Provider",
     link: "foxdevlab.com",
-    icon: "Award"
+    icon: "Heart"
   },
   {
     name: "Mallowshallow",
     role: "Money Sponsor (15$)", 
-    icon: "Star"
+    icon: "Heart"
   },
   {
     name: "Dennis Kidman",
     role: "Hardware and Domain Sponsor",
-    icon: "Sparkles"
+    icon: "Award"
   }
 ]
 
