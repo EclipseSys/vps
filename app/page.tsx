@@ -1610,58 +1610,59 @@ export default function VPSInitiativePage() {
             </p>
           </div>
       
-          <div
-            className={`mb-12 ${
-              sponsors.length < 3 ? 'flex justify-center' : ''
-            }`}
-          >
-            <div
-              className={`grid gap-8 ${
-                sponsors.length === 1
-                  ? 'grid-cols-1'
-                  : sponsors.length === 2
-                  ? 'grid-cols-2'
-                  : 'md:grid-cols-2 lg:grid-cols-3'
-              }`}
-            >
-              {sponsors.map((sponsor, index) => {
-                const IconComponent = getSponsorIcon(sponsor.icon)
-                return (
-                  <Card
-                    key={index}
-                    className="glass-effect border-border hover:border-primary/30 hover:scale-105 transition-all duration-300 group relative overflow-hidden"
-                  >
-                    <div className="absolute inset-0 cosmic-gradient opacity-0 group-hover:opacity-5 transition-opacity"></div>
-                    <CardContent className="p-6 text-center relative z-10">
-                      <div className="w-20 h-20 cosmic-gradient rounded-2xl flex items-center justify-center mb-4 mx-auto group-hover:scale-110 transition-transform">
-                        <IconComponent className="w-10 h-10 text-white" />
-                      </div>
-                      <h3 className="font-semibold text-foreground mb-2">{sponsor.name}</h3>
-                      <p className="text-sm text-muted-foreground mb-3">{sponsor.role}</p>
-                      {sponsor.isAnonymous ? (
-                        <span className="text-muted-foreground text-sm">Anonymous donation</span>
-                      ) : sponsor.link ? (
-                        <a
-                          href={
-                            sponsor.link.startsWith('@')
-                              ? `https://github.com/${sponsor.link.slice(1)}`
-                              : sponsor.link.startsWith('http')
-                              ? sponsor.link
-                              : `https://${sponsor.link}`
-                          }
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-primary hover:underline text-sm"
-                        >
-                          {sponsor.link}
-                        </a>
-                      ) : null}
-                    </CardContent>
-                  </Card>
-                )
-              })}
-            </div>
-          </div>
+          {/* Split sponsors into rows of max 3 */}
+          {Array.from({ length: Math.ceil(sponsors.length / 3) }).map((_, rowIndex) => {
+            const rowSponsors = sponsors.slice(rowIndex * 3, rowIndex * 3 + 3)
+            return (
+              <div
+                key={rowIndex}
+                className={`grid gap-8 mb-12 ${
+                  rowSponsors.length === 1
+                    ? 'grid-cols-1 justify-center'
+                    : rowSponsors.length === 2
+                    ? 'grid-cols-2 justify-center'
+                    : 'md:grid-cols-2 lg:grid-cols-3'
+                }`}
+              >
+                {rowSponsors.map((sponsor, index) => {
+                  const IconComponent = getSponsorIcon(sponsor.icon)
+                  return (
+                    <Card
+                      key={index}
+                      className="glass-effect border-border hover:border-primary/30 hover:scale-105 transition-all duration-300 group relative overflow-hidden"
+                    >
+                      <div className="absolute inset-0 cosmic-gradient opacity-0 group-hover:opacity-5 transition-opacity"></div>
+                      <CardContent className="p-6 text-center relative z-10">
+                        <div className="w-20 h-20 cosmic-gradient rounded-2xl flex items-center justify-center mb-4 mx-auto group-hover:scale-110 transition-transform">
+                          <IconComponent className="w-10 h-10 text-white" />
+                        </div>
+                        <h3 className="font-semibold text-foreground mb-2">{sponsor.name}</h3>
+                        <p className="text-sm text-muted-foreground mb-3">{sponsor.role}</p>
+                        {sponsor.isAnonymous ? (
+                          <span className="text-muted-foreground text-sm">Anonymous donation</span>
+                        ) : sponsor.link ? (
+                          <a
+                            href={
+                              sponsor.link.startsWith('@')
+                                ? `https://github.com/${sponsor.link.slice(1)}`
+                                : sponsor.link.startsWith('http')
+                                ? sponsor.link
+                                : `https://${sponsor.link}`
+                            }
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-primary hover:underline text-sm"
+                          >
+                            {sponsor.link}
+                          </a>
+                        ) : null}
+                      </CardContent>
+                    </Card>
+                  )
+                })}
+              </div>
+            )
+          })}
       
           <div className="text-center">
             <Button
