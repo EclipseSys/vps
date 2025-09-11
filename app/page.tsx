@@ -1610,9 +1610,13 @@ export default function VPSInitiativePage() {
             </p>
           </div>
       
-          <div className="flex justify-center">
+          <div
+            className={`mb-12 ${
+              sponsors.length < 3 ? 'flex justify-center' : ''
+            }`}
+          >
             <div
-              className={`grid gap-8 mb-12 ${
+              className={`grid gap-8 ${
                 sponsors.length === 1
                   ? 'grid-cols-1'
                   : sponsors.length === 2
@@ -1629,8 +1633,8 @@ export default function VPSInitiativePage() {
                   >
                     <div className="absolute inset-0 cosmic-gradient opacity-0 group-hover:opacity-5 transition-opacity"></div>
                     <CardContent className="p-6 text-center relative z-10">
-                      <div className="w-16 h-16 cosmic-gradient rounded-2xl flex items-center justify-center mb-4 mx-auto group-hover:scale-110 transition-transform">
-                        <IconComponent className="w-8 h-8 text-white" />
+                      <div className="w-20 h-20 cosmic-gradient rounded-2xl flex items-center justify-center mb-4 mx-auto group-hover:scale-110 transition-transform">
+                        <IconComponent className="w-10 h-10 text-white" />
                       </div>
                       <h3 className="font-semibold text-foreground mb-2">{sponsor.name}</h3>
                       <p className="text-sm text-muted-foreground mb-3">{sponsor.role}</p>
